@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/joemckenney/joemckenney#readme",
   "dependencies": {
+    "@types/webpack": "^4.41.17",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
