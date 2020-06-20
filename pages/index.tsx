@@ -1,5 +1,7 @@
-import styles from './index.module.css'
+import React from 'react'
+
+import Layout from '../components/layout/'
 
 export default function Home() {
-  return <div className={styles.home}>Hi</div>
+  return <Layout inset={5}>Hi</Layout>
 }
