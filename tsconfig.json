@@ -15,5 +15,5 @@
     "isolatedModules": true,
     "jsx": "react"
   },
-  "include": ["pages/**/*", "components/**/*", "styles/**/*"]
+  "exclude": ["node_modules"]
 }
