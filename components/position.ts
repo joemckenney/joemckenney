@@ -27,7 +27,7 @@ const position = ({ activator, alignment, box, placement }: Props) => {
   let left
   let top
 
-  if (!activator) {
+  if (!activator || !box) {
     return {}
   }
   const $activator = $(activator)

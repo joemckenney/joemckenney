@@ -14,9 +14,10 @@ const RelativeBox = ({ activator, alignment, children, placement }: Props) => {
   const box = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!activator || !box) {
+    if (!box.current) {
       return
     }
+
     const { left, top } = position({
       activator: (activator as React.RefObject<HTMLDivElement>).current,
       alignment,
