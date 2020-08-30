@@ -1,9 +1,9 @@
 import React from 'react'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  alignment: 'start' | 'center' | 'end'
-  children: React.ReactNode
-  color:
+  alignment?: 'start' | 'center' | 'end'
+  children?: React.ReactNode
+  color?:
     | 'normal'
     | 'muted'
     | 'pattern'
@@ -11,16 +11,16 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     | 'primary'
     | 'success'
     | 'white'
-  decoration: 'underline' | 'line-through' | 'highlight' | 'dotted'
-  direction: 'ltr' | 'rtl'
-  display: 'block' | 'inline'
-  font: 'normal' | 'mono'
-  fontStyle: 'italic'
-  selectable: 'true' | 'false'
-  size: 'extra-small' | 'small' | 'medium' | 'large' | 'title' | 'header'
-  transform: 'capitalize' | 'lowercase' | 'uppercase'
-  weight: 'thin' | 'light' | 'regular' | 'bold' | 'bolder' | 'black'
-  wrap: 'true' | 'false'
+  decoration?: 'underline' | 'line-through' | 'highlight' | 'dotted'
+  direction?: 'ltr' | 'rtl'
+  display?: 'block' | 'inline'
+  font?: 'normal' | 'mono'
+  fontStyle?: 'italic'
+  selectable?: 'true' | 'false'
+  size?: 'extra-small' | 'small' | 'medium' | 'large' | 'title' | 'header'
+  transform?: 'capitalize' | 'lowercase' | 'uppercase'
+  weight?: 'thin' | 'light' | 'regular' | 'bold' | 'bolder' | 'black'
+  wrap?: 'true' | 'false'
 }
 
 const Text = ({

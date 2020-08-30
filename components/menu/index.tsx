@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 
 import Layout from '../layout'
 
@@ -16,8 +16,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Menu = ({ children }: Props) => {
   const menuRef = useRef(null)
-
-  //useEffect(() => {}, [menuRef])
 
   return (
     <Layout data-id="menu" ref={menuRef}>

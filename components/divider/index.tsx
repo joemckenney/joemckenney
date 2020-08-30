@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './divider.module.css'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   orientation: 'vertical' | 'horizontal'
   spacing: number
 }
