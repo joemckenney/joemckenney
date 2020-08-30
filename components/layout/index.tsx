@@ -12,34 +12,40 @@ enum Flex {
   Auto = 'auto',
 }
 
-interface Props {
-  children: React.ReactChild
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
   inset?: number
   spacing?: number
   type?: Type
   flex?: Flex
 }
 
-function Layout({
-  children,
-  inset,
-  spacing,
-  type = Type.Horizontal,
-  flex = Flex.Auto,
-  ...attrs
-}: Props) {
-  return (
-    <div
-      {...attrs}
-      className={styles.layout}
-      data-flex={flex}
-      data-inset={inset}
-      data-spacing={spacing}
-      data-type={type}
-    >
-      {children}
-    </div>
-  )
-}
+const Layout = React.forwardRef(
+  (
+    {
+      children,
+      inset,
+      spacing,
+      type = Type.Horizontal,
+      flex = Flex.Auto,
+      ...attrs
+    }: Props,
+    ref
+  ) => {
+    return (
+      <div
+        {...attrs}
+        className={styles.layout}
+        data-flex={flex}
+        data-inset={inset}
+        data-spacing={spacing}
+        data-type={type}
+        ref={ref}
+      >
+        {children}
+      </div>
+    )
+  }
+)
 
 export default Layout
