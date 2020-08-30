@@ -10,7 +10,7 @@ export const Menu = ({ children }: Props) => {
   const menuRef = useRef(null)
 
   return (
-    <Layout type="vertical" ref={menuRef}>
+    <Layout type="vertical" style={{ background: 'pink' }} ref={menuRef}>
       {children}
     </Layout>
   )

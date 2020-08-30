@@ -30,7 +30,6 @@ const position = ({ activator, alignment, box, placement }: Props) => {
   if (!activator) {
     return {}
   }
-
   const $activator = $(activator)
   const $box = $(box)
 

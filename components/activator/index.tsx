@@ -7,17 +7,11 @@ interface Props {
   onClick: Function
   onClose: Function
   onMouseOver: Function
-  renderProp: Function
+  render: Function
 }
 
-function Activator({
-  children,
-  onClick,
-  onClose,
-  onMouseOver,
-  renderProp,
-}: Props) {
-  const activatorRef = useRef<Element>(null)
+function Activator({ children, onClick = () => {}, render }: Props) {
+  const activatorRef = useRef<HTMLDivElement>(null)
   const [isOpen, setOpen] = useState(false)
 
   const handleClick = () => {
@@ -25,24 +19,10 @@ function Activator({
     onClick()
   }
 
-  const handleMouseOver = () => {
-    setOpen(!isOpen)
-    onMouseOver()
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-    onClose()
-  }
-
   return (
-    <Layout
-      onClick={handleClick}
-      onMouseOver={handleMouseOver}
-      ref={activatorRef}
-    >
-      {children({ activator: activatorRef, onClose: handleClose })}
-      {isOpen && renderProp({ activator: activatorRef })}
+    <Layout flex="static" onClick={handleClick} ref={activatorRef}>
+      {children}
+      {isOpen && render({ activator: activatorRef })}
     </Layout>
   )
 }

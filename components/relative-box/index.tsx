@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 
 import position, { Alignment, Placement } from '../position'
@@ -11,25 +11,26 @@ interface Props {
 }
 
 const RelativeBox = ({ activator, alignment, children, placement }: Props) => {
-  let box: HTMLDivElement = document.createElement('div')
+  const box = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
-    box = document.createElement('div')
-    document.body.appendChild(box)
-    return function remove() {
-      document.body.removeChild(box)
+    if (!activator || !box) {
+      return
     }
-  })
-  //
-  useEffect(() => {
-    position({
-      activator: activator.current,
+    const { left, top } = position({
+      activator: (activator as React.RefObject<HTMLDivElement>).current,
       alignment,
-      box,
+      box: (box as React.RefObject<HTMLDivElement>).current,
       placement,
     })
+    if (box.current) {
+      box.current.style.position = 'absolute'
+      box.current.style.left = `${left}px`
+      box.current.style.top = `${top}px`
+    }
   })
 
-  return ReactDOM.createPortal(children, box)
+  return ReactDOM.createPortal(<div ref={box}>{children}</div>, document.body)
 }
 
 export default RelativeBox
