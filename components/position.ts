@@ -19,7 +19,7 @@ export const FLOATING_OFFSET = 6
 interface Props {
   activator: HTMLDivElement | null
   alignment: Alignment
-  box: HTMLDivElement
+  box: HTMLDivElement | null
   placement: Placement
 }
 

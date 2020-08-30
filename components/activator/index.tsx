@@ -3,10 +3,10 @@ import Layout from '../layout'
 //import styles from './layout.module.css'
 
 interface Props {
-  children: Function
-  onClick: Function
-  onClose: Function
-  onMouseOver: Function
+  children: React.ReactNode
+  onClick?: Function
+  onClose?: Function
+  onMouseOver?: Function
   render: Function
 }
 
