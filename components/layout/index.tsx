@@ -30,7 +30,7 @@ const Layout = React.forwardRef(
       flex = Flex.Auto,
       ...attrs
     }: Props,
-    ref
+    ref: React.Ref<HTMLDivElement>
   ) => {
     return (
       <div
