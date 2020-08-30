@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './text.module.css'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   alignment?: 'start' | 'center' | 'end'
@@ -42,7 +43,7 @@ const Text = ({
   return (
     <div
       {...attrs}
-      className="m-text"
+      className={styles.text}
       data-alignment={alignment}
       data-color={color}
       data-decoration={decoration}

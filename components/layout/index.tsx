@@ -1,23 +1,12 @@
 import React from 'react'
 import styles from './layout.module.css'
 
-enum Type {
-  Vertical = 'vertical',
-  Horizontal = 'horizontal',
-}
-
-enum Flex {
-  Initial = 'initial',
-  Static = 'static',
-  Auto = 'auto',
-}
-
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   inset?: number
   spacing?: number
-  type?: Type
-  flex?: Flex
+  type?: 'vertical' | 'horizontal'
+  flex?: 'initial' | 'static' | 'auto'
 }
 
 const Layout = React.forwardRef(
@@ -26,8 +15,8 @@ const Layout = React.forwardRef(
       children,
       inset,
       spacing,
-      type = Type.Horizontal,
-      flex = Flex.Auto,
+      type = 'horizontal',
+      flex = 'auto',
       ...attrs
     }: Props,
     ref: React.Ref<HTMLDivElement>

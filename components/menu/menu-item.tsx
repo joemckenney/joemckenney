@@ -10,7 +10,7 @@ interface Props {
 const MenuItem = React.forwardRef(
   ({ children }: Props, ref: React.Ref<HTMLDivElement>) => {
     return (
-      <Layout inset={2} ref={ref}>
+      <Layout flex="static" inset={2} ref={ref}>
         <Text>{children}</Text>
       </Layout>
     )
