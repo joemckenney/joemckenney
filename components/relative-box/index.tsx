@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 
 import position, { Alignment, Placement } from '../position'
@@ -13,7 +13,7 @@ interface Props {
 const RelativeBox = ({ activator, alignment, children, placement }: Props) => {
   const box = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!box.current) {
       return
     }
