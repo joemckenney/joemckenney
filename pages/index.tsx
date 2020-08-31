@@ -34,7 +34,7 @@ export default function Home() {
           )}
         >
           <Button>
-            <Text>CLICK ME</Text>
+            <Text>CLICK ME!</Text>
           </Button>
         </Activator>
       </Layout>
