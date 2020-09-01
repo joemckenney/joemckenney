@@ -6,37 +6,40 @@ import Menu from '../components/menu'
 import MenuItem from '../components/menu/menu-item'
 import MenuDivider from '../components/menu/menu-divider'
 import Text from '../components/text'
-import RelativeBox from '../components/relative-box'
-import Activator from '../components/activator'
 import Button from '../components/button'
-
-import { Alignment, Placement } from '../components/position'
+import ContextMenu from '../components/contextmenu'
 
 export default function Home() {
   return (
-    <Layout type="vertical" inset={5}>
-      <Layout type="horizontal" flex="static">
-        <Activator
-          render={({ activator }: { activator: any }) => (
-            <RelativeBox
-              activator={activator}
-              alignment={Alignment.Left}
-              placement={Placement.Bottom}
-            >
-              <Menu>
-                <MenuItem>Joe</MenuItem>
-                <MenuItem>Leah</MenuItem>
-                <MenuDivider />
-                <MenuItem>Baobab</MenuItem>
-                <MenuItem>Meeko</MenuItem>
-              </Menu>
-            </RelativeBox>
-          )}
-        >
+    <Layout type="vertical">
+      <ContextMenu>
+        <Menu>
+          <MenuItem>JoeJoeJoeJoeJoeJoeJoeJoe</MenuItem>
+          <MenuItem>Leah</MenuItem>
+          <MenuDivider />
+          <MenuItem>Baobab</MenuItem>
+          <MenuItem>Meeko</MenuItem>
+          <MenuDivider />
+          <MenuItem>Baobab</MenuItem>
+          <MenuDivider />
+          <MenuItem>Baobab</MenuItem>
+          <MenuItem>Baobab</MenuItem>
+        </Menu>
+      </ContextMenu>
+      <Layout style={{ background: 'grey' }} />
+      <Layout
+        flex="static"
+        inset={1}
+        style={{
+          background: 'linear-gradient(to bottom, #3D3E3D, #000000, #3D3E3D)',
+        }}
+      >
+        <Layout flex="static" style={{ background: 'darkgreen' }}>
           <Button>
-            <Text>CLICK ME!</Text>
+            <Text>Start</Text>
           </Button>
-        </Activator>
+        </Layout>
+        <Layout />
       </Layout>
     </Layout>
   )

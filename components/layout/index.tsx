@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './layout.module.css'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
+  children?: React.ReactNode
   inset?: number
   spacing?: number
   type?: 'vertical' | 'horizontal'

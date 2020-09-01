@@ -40,7 +40,13 @@ const position = ({ activator, alignment, box, placement }: Props) => {
   const activatorW = $activator.outerWidth()
   const activatorH = $activator.outerHeight()
 
-  if (!activatorO || !activatorH || !activatorW || !boxH || !boxW) {
+  if (
+    activatorO == null ||
+    activatorH == null ||
+    activatorW == null ||
+    boxH == null ||
+    boxW == null
+  ) {
     return {}
   }
 

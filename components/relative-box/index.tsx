@@ -24,6 +24,7 @@ const RelativeBox = ({ activator, alignment, children, placement }: Props) => {
       box: (box as React.RefObject<HTMLDivElement>).current,
       placement,
     })
+
     if (box.current) {
       box.current.style.position = 'absolute'
       box.current.style.left = `${left}px`
