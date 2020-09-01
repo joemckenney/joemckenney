@@ -7,7 +7,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   ariaExpanded?: boolean
   ariaLabel?: string
   ariaPressed?: boolean
-  children: React.ReactNode
+  children?: React.ReactNode
   id?: string
   onBlur?(): void
   onClick?(): void

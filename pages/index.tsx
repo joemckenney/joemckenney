@@ -5,9 +5,9 @@ import Layout from '../components/layout/'
 import Menu from '../components/menu'
 import MenuItem from '../components/menu/menu-item'
 import MenuDivider from '../components/menu/menu-divider'
-import Text from '../components/text'
 import Button from '../components/button'
 import ContextMenu from '../components/contextmenu'
+import Clock from '../components/clock'
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
           <MenuItem>Baobab</MenuItem>
         </Menu>
       </ContextMenu>
-      <Layout style={{ background: 'grey' }} />
+      <Layout style={{ backgroundColor: '#0E0E0E' }} />
       <Layout
         flex="static"
         inset={1}
@@ -34,12 +34,13 @@ export default function Home() {
           background: 'linear-gradient(to bottom, #3D3E3D, #000000, #3D3E3D)',
         }}
       >
-        <Layout flex="static" style={{ background: 'darkgreen' }}>
-          <Button>
-            <Text>Start</Text>
-          </Button>
+        <Layout flex="static" style={{ background: '#e6e6e6' }}>
+          <Button></Button>
         </Layout>
         <Layout />
+        <Layout style={{ color: '#e6e6e6' }} flex="static">
+          <Clock />
+        </Layout>
       </Layout>
     </Layout>
   )
